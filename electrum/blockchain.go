@@ -163,7 +163,7 @@ func (n *Node) BlockchainScripthashListUnspent(scriptHash string) ([]*Transactio
 	resp := &struct {
 		Result []*Transaction `json:"result"`
 	}{}
-	err := n.request("blockchain.address.listunspent", []string{address}, resp)
+	err := n.request("blockchain.address.listunspent", []string{scriptHash}, resp)
 	return resp.Result, err
 }
 
